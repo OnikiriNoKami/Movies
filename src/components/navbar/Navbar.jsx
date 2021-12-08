@@ -2,6 +2,17 @@ import { createRef } from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 
+const linksArray = [
+  {
+    path: 'trending',
+    text: 'TRENDING',
+  },
+  {
+    path: 'search',
+    text: 'SEARCH',
+  }
+]
+
 export default function Navbar() {
 
   const appNav = createRef();
@@ -22,26 +33,9 @@ export default function Navbar() {
           onClick={toggleNavigation}
         />
         <ul ref={appNav} id="app-navigation" className="app-navigation flex" >
-          <li >
-            <Link id="navigation-link" className="navigation-link" to="somelink">
-              Somelink
-            </Link>
-          </li>
-          <li >
-            <Link id="navigation-link" className="navigation-link" to="somelink">
-              Difflink
-            </Link>
-          </li>
-          <li >
-            <Link id="navigation-link" className="navigation-link" to="somelink">
-              Rifflink
-            </Link>
-          </li>
-          <li >
-            <Link id="navigation-link" className="navigation-link" to="somelink">
-              Pifflink
-            </Link>
-          </li>
+          {linksArray.map((link) => {
+            return <li key={link.path}><Link id="navigation-link" className="navigation-link" to={link.path}>{link.text}</Link></li>
+          })}
         </ul>
       </nav>
       <div className="logo">Logo</div>
