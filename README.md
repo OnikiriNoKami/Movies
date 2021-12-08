@@ -1,4 +1,4 @@
-## Tis project is created for react, redux, css practice
+## This project was created for practice in using react, redux, css
 
 ## Available Scripts
 
