@@ -1,5 +1,6 @@
 .card-movie {
   max-width: 40ch;
+  min-width: 40ch;
   min-height: 70vh;
   background-size: cover;
   box-sizing: border-box;
@@ -37,6 +38,16 @@
   text-overflow: ellipsis;
 }
 
+@media (max-width: 600px) {
+  .card-movie {
+    max-width: 90vw;
+    min-width: 90vw;
+  }
+
+  .card-movie-content {
+    max-width: calc(90vw - 2* var(--padding));
+  }
+}
 
 @media (hover) {
   .card-movie:hover,
@@ -45,7 +56,7 @@
   }
 
   .card-movie-content {
-    transform: translateY(80%);
+    transform: translateY(70vh);
     transition: transform 500ms ease;
   }
 
