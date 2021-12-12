@@ -1,0 +1,73 @@
+.card-movie {
+  max-width: 40ch;
+  min-height: 70vh;
+  background-size: cover;
+  box-sizing: border-box;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  position: relative;
+  transition: transform 500ms ease;
+}
+
+.card-movie-title {
+  overflow-wrap: break-word;
+}
+
+.card-movie-content {
+  position: absolute;
+  bottom: 0;  
+  --padding: 1.5rem;
+  padding: var(--padding);
+  max-width: calc(40ch - 2* var(--padding));
+  background: linear-gradient(hsl(0 0% 0% / 0),hsl(0 0% 0% / 30%) 10%, hsl(0 0% 0% / 70%) 20%, hsl(0 0% 0% / 70%));
+}
+
+.card-movie-votes-container {
+  padding-bottom: var(--padding);
+}
+
+.movie-score {
+  padding-right: 1ch;
+}
+
+.card-movie-text {
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
+  text-overflow: ellipsis;
+}
+
+
+@media (hover) {
+  .card-movie:hover,
+  .card-movie:focus-within {
+    transform: scale(1.05);
+  }
+
+  .card-movie-content {
+    transform: translateY(80%);
+    transition: transform 500ms ease;
+  }
+
+  .card-movie:hover .card-movie-content,
+  .card-movie:focus-within .card-movie-content {
+    transform: translateY(0);
+    transition-delay: 100ms;
+  }
+}
+
+.card-movie-button {
+  cursor: pointer;
+  display: inline;
+  text-decoration: none;
+  color: black;
+  background-color: rgb(0, 143, 143);
+  padding: 0.3em 1em;
+  border-radius: 0.25em;
+  transition: 0.2s linear;
+}
+
+.card-movie-button:hover,
+.card-movie-button:focus {
+  background-color: rgb(0, 192, 192);
+}

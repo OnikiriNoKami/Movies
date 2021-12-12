@@ -1,6 +1,7 @@
 import {useEffect} from 'react'
 import { useDispatch } from 'react-redux'
-import { getTrendingMovieWeek } from '../../../api/getTrending'
+import { getTrendingMovieWeek } from '../../../api/getTrending';
+import MovieCard from '../card/movieCard/MovieCard';
 export default function TrendingContainer() {
   const dispatch = useDispatch();
 
@@ -12,7 +13,7 @@ export default function TrendingContainer() {
   }, [])
   return (
     <div>
-      Trending container
+      <MovieCard/>
     </div>
   )
 }
